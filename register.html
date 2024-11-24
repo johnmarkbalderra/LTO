@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTO - Register</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+    />
+    <link rel="icon" type="image/jpg" href="assets/img/LTO-logo.jpg" />
+    <style>
+      body {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          margin: 0;
+          font-family: 'Nunito', sans-serif;
+          background-image: url('assets/img/background.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: relative; /* To position the overlay */
+        }
+
+      body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); /* Darken the background */
+        z-index: -1; /* Ensure the overlay is behind content */
+      }
+
+      .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+      }
+
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f8f9fa;
+        font-family: 'Nunito', sans-serif;
+      }
+
+
+      .logo-header {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        text-align: center;
+        border-bottom: 1px solid #eaeaea;
+      }
+
+      .logo-header img {
+        width: 80px;
+        height: auto;
+      }
+
+      .logo-header h4 {
+        margin-top: 0.5rem;
+        font-weight: 600;
+        color: #007aff;
+      }
+
+      .form-control {
+        border-radius: 8px;
+      }
+
+      .btn-primary {
+        background-color: #007aff;
+        border: none;
+        border-radius: 8px;
+      }
+
+      .btn-primary:hover {
+        background-color: #005bb5;
+      }
+
+      .text-muted {
+        color: #6c757d;
+      }
+
+      .alert {
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <div class="card shadow-lg my-5">
+            <div class="logo-header">
+              <img src="assets/img/LTO.jpg" alt="LTO Logo" />
+              <h4>Create an Account</h4>
+            </div>
+            <div class="p-5">
+              <form action="register.php" method="post">
+                <div class="row mb-3">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="First Name"
+                      name="first_name"
+                      required
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Middle Name"
+                      name="middle_name"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Last Name"
+                    name="last_name"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Address"
+                    name="address"
+                    required
+                  />
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input
+                      class="form-control"
+                      type="email"
+                      placeholder="Email Address"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <input
+                      class="form-control"
+                      type="tel"
+                      placeholder="Phone Number"
+                      name="telephone"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input
+                      class="form-control"
+                      type="password"
+                      placeholder="Password"
+                      name="password"
+                      required
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <input
+                      class="form-control"
+                      type="password"
+                      placeholder="Repeat Password"
+                      name="password_repeat"
+                      required
+                    />
+                  </div>
+                </div>
+                <button class="btn btn-primary w-100" type="submit">Register Account</button>
+              </form>
+              <hr />
+              <div class="text-center">
+                <a class="small" href="forgot-password.html">Forgot Password?</a>
+              </div>
+              <div class="text-center">
+                <a class="small" href="index.html">Already have an account? Login!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
