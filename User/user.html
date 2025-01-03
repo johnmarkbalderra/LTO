@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .dashboard {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .profile {
+            flex: 0 0 250px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
+            border-radius: 15px;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+        .profile h3, .profile p {
+            margin: 0;
+            text-align: center;
+        }
+        .profile .btn-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .btn-group .btn {
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 15px;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: calc(100% - 290px);
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            border-radius: 15px;
+        }
+        .card {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: none;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            color: #fff;
+        }
+        .card .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .card h5, .card p {
+            margin: 0;
+        }
+        .appointment-card {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .appointment-card h5 {
+            margin: 0;
+            font-weight: bold;
+        }
+        .appointment-card p {
+            margin: 5px 0;
+        }
+        @media (max-width: 576px) {
+            .dashboard {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .main-content {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture" class="img-fluid">
+            <div>
+                <h3>User Name</h3>
+                <p>Email: user@example.com</p>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary">Add Appointment</button>
+                <button class="btn btn-warning">Reschedule Appointment</button>
+                <button class="btn btn-danger">Cancel Appointment</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="section">
+                <h3>Upcoming Appointments</h3>
+                <div class="appointment-card">
+                    <h5>Appointment 1</h5>
+                    <p>Date: 2023-12-30</p>
+                    <p>Time: 10:00 AM</p>
+                    <p>Location: Emission Testing Center 1</p>
+                </div>
+                <div class="appointment-card">
+                    <h5>Appointment 2</h5>
+                    <p>Date: 2024-01-05</p>
+                    <p>Time: 2:00 PM</p>
+                    <p>Location: Emission Testing Center 2</p>
+                </div>
+            </div>
+            <div class="section">
+                <h3>Vehicles</h3>
+                <div class="card" style="background-image: url('car1.jpg');">
+                    <div class="overlay">
+                        <h5 class="card-title">Vehicle 1</h5>
+                        <p class="card-text">Basic Information about Vehicle 1</p>
+                    </div>
+                </div>
+                <div class="card" style="background-image: url('car2.jpg');">
+                    <div class="overlay">
+                        <h5 class="card-title">Vehicle 2</h5>
+                        <p class="card-text">Basic Information about Vehicle 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

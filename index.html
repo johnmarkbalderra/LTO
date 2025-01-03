@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+    />
+    <link rel="icon" type="image/jpg" href="assets/img/LTO.jpg" />
+    <style>
+            body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        background-image: url('assets/img/background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative; /* To position the overlay */
+      }
+
+      body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); /* Darken the background */
+        z-index: -1; /* Ensure the overlay is behind content */
+      }
+
+      .card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f8f9fa;
+        font-family: 'Nunito', sans-serif;
+      }
+
+      .logo-header {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        text-align: center;
+        border-bottom: 1px solid #eaeaea;
+      }
+
+      .logo-header img {
+        width: 80px;
+        height: auto;
+      }
+
+      .logo-header h4 {
+        margin-top: 0.5rem;
+        font-weight: 600;
+        color: #007aff;
+      }
+
+      .logo-header p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #6c757d;
+      }
+
+      .form-control {
+        border-radius: 8px;
+      }
+
+      .btn-primary {
+        background-color: #007aff;
+        border: none;
+        border-radius: 8px;
+      }
+
+      .btn-primary:hover {
+        background-color: #005bb5;
+      }
+
+      .text-muted {
+        color: #6c757d;
+      }
+
+      .alert {
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow-lg my-5">
+            <div class="logo-header">
+              <img src="assets/img/LTO.jpg" alt="LTO Logo" />
+              <h4>DUMA LTO Appointment System</h4>
+              <p class="text-muted">Welcome Back! Please sign in to continue</p>
+            </div>
+            <div class="p-5">
+              <div id="error-message" class="alert alert-danger" style="display: none"></div>
+              <form id="login-form">
+                <div class="mb-3">
+                  <input
+                    class="form-control"
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    class="form-control"
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    name="password"
+                    required
+                  />
+                </div>
+                <button class="btn btn-primary w-100" type="submit" id="submit">Login</button>
+              </form>
+              <hr />
+              <div class="text-center">
+                <a class="small" href="forgot-password.html">Forgot Password?</a>
+              </div>
+              <div class="text-center">
+                <a class="small" href="register.html">Create an Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#login-form").submit(function (event) {
+          event.preventDefault();
+
+          $.ajax({
+            type: "POST",
+            url: "login.php",
+            data: $(this).serialize(),
+            dataType: "json",
+            success: function (response) {
+              if (response.success) {
+                window.location.href = response.redirect;
+              } else {
+                $("#error-message").text(response.message).show();
+              }
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

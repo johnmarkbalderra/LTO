@@ -1,0 +1,8 @@
+[23-Dec-2024 02:26:16 Europe/Berlin] Received data: Array
+(
+    [schedule_id] => 178
+)
+
+[23-Dec-2024 02:26:16 Europe/Berlin] Received schedule ID: 178
+[23-Dec-2024 02:26:16 Europe/Berlin] Successfully updated waitlist for schedule ID: 178
+[23-Dec-2024 02:26:16 Europe/Berlin] Notification sent for user ID: 17
